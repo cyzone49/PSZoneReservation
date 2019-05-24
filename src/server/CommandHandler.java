@@ -1,12 +1,10 @@
+package server;
+
 import command.commandData.*;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.HttpURLConnection;
 
 import com.google.gson.*;
@@ -31,9 +29,21 @@ public class CommandHandler implements HttpHandler
     {
         boolean success = false;
         System.out.println("\n\n\n#################################\n");
-        System.out.println("CommandHandler running ... ");
+        System.out.println("server.CommandHandler running ... ");
+
+        String query = exchange.getRequestURI().getPath();
+        System.out.println("\nrequest uri = " + query);
+
+        File file = null;
+        if(query.equals("/")) {
+            file = new File("web/index.html");
+        }
+
         try
         {
+
+
+
             if (exchange.getRequestMethod().toLowerCase().equals("post"))
             {
                 String reqData = null;
@@ -78,7 +88,7 @@ public class CommandHandler implements HttpHandler
                     commandData = gson.fromJson(reqData, LoginCommandData.class);
                     if(commandData == null)
                     {
-                        System.out.println("Invalid Server Login Command Data");
+                        System.out.println("Invalid server.Server Login Command Data");
                     }
                     else
                     {
@@ -93,7 +103,7 @@ public class CommandHandler implements HttpHandler
                     commandData = gson.fromJson(reqData, RegisterCommandData.class);
                     if(commandData == null)
                     {
-                        System.out.print("Invalid Server Register Command Data");
+                        System.out.print("Invalid server.Server Register Command Data");
                     }
                     else
                     {
@@ -113,7 +123,7 @@ public class CommandHandler implements HttpHandler
                     commandData = gson.fromJson(reqData, AddLocationCommandData.class);
                     if(commandData == null)
                     {
-                        System.out.print("Invalid Server Add Location Command Data");
+                        System.out.print("Invalid server.Server Add Location Command Data");
                     }
                     else
                     {
@@ -129,7 +139,7 @@ public class CommandHandler implements HttpHandler
                     commandData = gson.fromJson(reqData, GetAllLocationsCommandData.class);
                     if(commandData == null)
                     {
-                        System.out.print("Invalid Server Get All Locations Command Data");
+                        System.out.print("Invalid server.Server Get All Locations Command Data");
                     }
                     else
                     {
@@ -148,7 +158,7 @@ public class CommandHandler implements HttpHandler
                     commandData = gson.fromJson(reqData, AddServicePackageCommandData.class);
                     if(commandData == null)
                     {
-                        System.out.print("Invalid Server add Package Command Data");
+                        System.out.print("Invalid server.Server add Package Command Data");
                     }
                     else
                     {
@@ -168,7 +178,7 @@ public class CommandHandler implements HttpHandler
                     commandData = gson.fromJson(reqData, AddSlotCommandData.class);
                     if(commandData == null)
                     {
-                        System.out.print("Invalid Server add Slot Command Data");
+                        System.out.print("Invalid server.Server add Slot Command Data");
                     }
                     else
                     {

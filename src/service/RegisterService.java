@@ -28,7 +28,7 @@ public class RegisterService {
 
         } else {
             System.out.println("\tFAILED. User NOT inserted into DB");
-            return new CommandResult(false, new ErrorResultData("Register failed! username/password combination not found"));
+            return new CommandResult(false, new ErrorResultData("Register failed! username is already taken"));
         }
     }
 

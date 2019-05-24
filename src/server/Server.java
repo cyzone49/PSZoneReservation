@@ -1,9 +1,8 @@
+package server;
+
 import java.io.*;
 import java.net.*;
-import java.util.Scanner;
 
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 import com.sun.net.httpserver.*;
 
 
@@ -15,7 +14,7 @@ public class Server {
 
     private void run(String portNumber) {
 
-        System.out.println("Initializing HTTP Server");
+        System.out.println("Initializing HTTP server.Server");
 
         try {
             // Create a new HttpServer object.
@@ -36,13 +35,14 @@ public class Server {
 
         System.out.println("Creating contexts");
 
-        server.createContext("/", new CommandHandler());
+        server.createContext("/", new DefaultHandler());
+        server.createContext("/command", new CommandHandler());
 
         System.out.println("Starting server on port " + portNumber);
 
         server.start();
 
-        System.out.println("Server started");
+        System.out.println("server.Server started");
         try {
             System.out.println("Hostname: " + InetAddress.getLocalHost());
         } catch (Exception e) {

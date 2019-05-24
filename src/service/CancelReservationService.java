@@ -40,7 +40,7 @@ public class CancelReservationService {
                     + commandData.getConfirmationID() + "from database"));
         } else {
             System.out.println("\tSUCCESS. Reservation " + commandData.getConfirmationID() + " is deleted from Database");
-            return new CommandResult(true, new CancelReservationResultData());
+            return new CommandResult(true, new CancelReservationResultData(commandData.getConfirmationID()));
         }
 
     }

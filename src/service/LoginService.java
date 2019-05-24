@@ -21,7 +21,14 @@ public class LoginService {
             return new CommandResult(false, new ErrorResultData("Login failed! No match!"));
         } else {
             System.out.println("\tSuccessful! loaded user's info. {" + user.getUsername() +"}");
-            return new CommandResult(true, new LoginResultData(user.getUsername()+user.getUserID()));
+            LoginResultData data = new LoginResultData();
+            data.setUserID(user.getUserID());
+            data.setUsername(user.getUsername());
+            data.setPassword(user.getPassword());
+            data.setEmail(user.getEmail());
+            data.setPhone(user.getPhone());
+
+            return new CommandResult(true, data);
         }
 
     }

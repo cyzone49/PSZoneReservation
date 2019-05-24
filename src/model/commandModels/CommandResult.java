@@ -5,11 +5,11 @@ import command.commandResult.ClientResultData;
 public class CommandResult {
 
     private boolean success;
-    private ClientResultData commandResult;
+    private ClientResultData resultData;
 
     public CommandResult(boolean success, ClientResultData commandResult) {
         this.success = success;
-        this.commandResult = commandResult;
+        this.resultData = commandResult;
     }
 
     public boolean isSuccess() {
@@ -17,7 +17,7 @@ public class CommandResult {
     }
 
     public ClientResultData getCommandResult() {
-        return commandResult;
+        return resultData;
     }
 
     public String toString()
@@ -32,7 +32,7 @@ public class CommandResult {
             retString = retString + "SUCCESS: False\n";
         }
 
-        retString = retString + "CommandResult: " + commandResult.getCommandType().toString() + "\n";
+        retString = retString + "ResultData: " + resultData.getCommandType().toString() + "\n";
 //        retString = retString + getCommandDataList().toString();
 
         return retString;

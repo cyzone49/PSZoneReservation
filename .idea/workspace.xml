@@ -2,15 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbe23aa1-2f10-4e11-8fc0-799f82c03d3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/DefaultHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/StreamOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/web/js/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RelationalDatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/RelationalDatabase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/commandData/CancelReservationCommandData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/commandData/CancelReservationCommandData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DataAccess/ReservationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DataAccess/ReservationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DataAccess/SlotDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DataAccess/SlotDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/commandModels/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/commandModels/CommandType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/CommandHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/command/commandResult/CancelReservationResultData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/command/commandResult/CancelReservationResultData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/command/commandResult/LoginResultData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/command/commandResult/LoginResultData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/database/DataAccess/ReservationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/database/DataAccess/ReservationDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/model/commandModels/CommandResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/model/commandModels/CommandResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/service/CancelReservationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/service/CancelReservationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/service/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PSZoneReservation/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PSZoneReservation/service/RegisterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/commandResult/LoginResultData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/commandResult/LoginResultData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/commandModels/CommandResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/commandModels/CommandResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/CancelReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CancelReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RegisterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +38,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="79" column="56" lean-forward="true" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+            <state relative-caret-position="1262">
+              <caret line="349" column="54" lean-forward="true" selection-start-line="349" selection-start-column="54" selection-end-line="349" selection-end-column="54" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#3;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#1;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#2;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#3;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#4;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#1;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#2;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#div#4;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#1;n#div#4;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/DefaultHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,19 +89,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/command/commandData/CancelReservationCommandData.java">
+        <entry file="file://$PROJECT_DIR$/src/web/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="195">
+              <caret line="13" column="44" lean-forward="true" selection-end-line="230" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/site.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="e#388#389#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#537#538#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/CancelReservationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            <state relative-caret-position="630">
+              <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,36 +125,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DataAccess/SlotDao.java">
+        <entry file="file://$PROJECT_DIR$/src/model/commandModels/CommandResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+            <state relative-caret-position="465">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/command/commandData/MakeReservationCommandData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#709#710#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CommandHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/command/commandResult/MakeReservationResultData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="180">
+              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/MakeReservationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#380#381#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,9 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ClientCommandData</find>
-      <find>checkUniqueness</find>
-      <find>getCommandDataList</find>
       <find>generateAuthToken</find>
       <find>authTokenGe</find>
       <find>ServerCommand</find>
@@ -140,6 +196,12 @@
       <find>Running getReservationID by I</find>
       <find>reqDa</find>
       <find>checkSlot</find>
+      <find>system.</find>
+      <find>formatJson</find>
+      <find>writeString</find>
+      <find>requestb</find>
+      <find>handle</find>
+      <find>submit()</find>
     </findStrings>
     <replaceStrings>
       <replace>CommandData</replace>
@@ -151,17 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/database/DataAccess/ServicePackageDao.java" />
-        <option value="$PROJECT_DIR$/src/model/ServicePackage.java" />
-        <option value="$PROJECT_DIR$/src/command/commandResult/GetAvailableSlotsByPackageResultData.java" />
-        <option value="$PROJECT_DIR$/src/command/commandData/GetAvailableSlotsByLocationCommandData.java" />
-        <option value="$PROJECT_DIR$/src/command/commandData/GetAvailableSlotsByPackageCommandData.java" />
-        <option value="$PROJECT_DIR$/src/command/userCommand/RegisterCommand.java" />
-        <option value="$PROJECT_DIR$/src/service/AddSlotService.java" />
-        <option value="$PROJECT_DIR$/src/command/slotCommand/AddSlotCommand.java" />
-        <option value="$PROJECT_DIR$/src/command/slotCommand/GetAvailableSlots.java" />
-        <option value="$PROJECT_DIR$/src/service/GetAllLocationsService.java" />
-        <option value="$PROJECT_DIR$/src/command/slotCommand/GetAvailableSlotsCommand.java" />
         <option value="$PROJECT_DIR$/src/handler/UserHandler.java" />
         <option value="$PROJECT_DIR$/src/command/commandData/GetAvailableSlotsCommandData.java" />
         <option value="$PROJECT_DIR$/src/command/commandResult/GetAvailableSlotsResultData.java" />
@@ -174,12 +225,10 @@
         <option value="$PROJECT_DIR$/src/command/servicePackage/AddServicePackageCommand.java" />
         <option value="$PROJECT_DIR$/src/service/GetAvailableSlotsService.java" />
         <option value="$PROJECT_DIR$/src/command/reservation/GetReservationByUserCommand.java" />
-        <option value="$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java" />
         <option value="$PROJECT_DIR$/src/command/commandResult/ErrorResultData.java" />
         <option value="$PROJECT_DIR$/src/command/commandResult/MakeReservationResultData.java" />
         <option value="$PROJECT_DIR$/src/command/commandResult/GetAllLocationsResultData.java" />
         <option value="$PROJECT_DIR$/src/command/commandResult/RegisterResultData.java" />
-        <option value="$PROJECT_DIR$/src/command/commandResult/LoginResultData.java" />
         <option value="$PROJECT_DIR$/src/service/UniqueGenerator.java" />
         <option value="$PROJECT_DIR$/src/utils/UniqueChecker.java" />
         <option value="$PROJECT_DIR$/src/model/Reservation.java" />
@@ -189,7 +238,6 @@
         <option value="$PROJECT_DIR$/src/utils/UniqueGenerator.java" />
         <option value="$PROJECT_DIR$/src/command/commandData/GetReservationByidCommandData.java" />
         <option value="$PROJECT_DIR$/src/command/reservation/GetReservationByIDCommand.java" />
-        <option value="$PROJECT_DIR$/src/CommandHandler.java" />
         <option value="$PROJECT_DIR$/src/service/GetReservationByIDService.java" />
         <option value="$PROJECT_DIR$/src/service/GetReservationByUserService.java" />
         <option value="$PROJECT_DIR$/src/command/commandResult/GetReservationByUserResultData.java" />
@@ -198,15 +246,29 @@
         <option value="$PROJECT_DIR$/src/database/DataAccess/SlotDao.java" />
         <option value="$PROJECT_DIR$/src/model/commandModels/CommandType.java" />
         <option value="$PROJECT_DIR$/src/database/Database.java" />
-        <option value="$PROJECT_DIR$/src/database/DataAccess/ReservationDao.java" />
-        <option value="$PROJECT_DIR$/src/service/CancelReservationService.java" />
         <option value="$PROJECT_DIR$/src/command/commandData/CancelReservationCommandData.java" />
         <option value="$PROJECT_DIR$/src/site.html" />
+        <option value="$PROJECT_DIR$/src/database/DataAccess/ReservationDao.java" />
+        <option value="$PROJECT_DIR$/src/CommandHandler.java" />
+        <option value="$PROJECT_DIR$/src/Server.java" />
+        <option value="$PROJECT_DIR$/src/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/server/StreamOut.java" />
+        <option value="$PROJECT_DIR$/src/server/ObjectEncoderDecoder.java" />
+        <option value="$PROJECT_DIR$/src/service/RegisterService.java" />
+        <option value="$PROJECT_DIR$/src/command/commandResult/LoginResultData.java" />
+        <option value="$PROJECT_DIR$/src/service/LoginService.java" />
+        <option value="$PROJECT_DIR$/src/model/commandModels/CommandResult.java" />
+        <option value="$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java" />
+        <option value="$PROJECT_DIR$/src/service/CancelReservationService.java" />
+        <option value="$PROJECT_DIR$/src/web/scripts.js" />
+        <option value="$PROJECT_DIR$/src/web/css/main.css" />
+        <option value="$PROJECT_DIR$/src/server/DefaultHandler.java" />
+        <option value="$PROJECT_DIR$/src/web/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="868" />
+    <option name="x" value="46" />
     <option name="y" value="27" />
     <option name="width" value="1052" />
     <option name="height" value="1053" />
@@ -262,27 +324,7 @@
               <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
               <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="DataAccess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="commandModels" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
@@ -295,6 +337,19 @@
               <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PSZoneReservation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PSZoneReservation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -313,6 +368,9 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/web/js" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="command" />
     </key>
@@ -331,7 +389,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Server" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Server" />
+      <option name="MAIN_CLASS_NAME" value="server.Server" />
       <module name="PSZoneReservation" />
       <option name="PROGRAM_PARAMETERS" value="8000" />
       <method v="2">
@@ -353,18 +411,18 @@
       <workItem from="1558196878950" duration="2196000" />
       <workItem from="1558199379348" duration="49478000" />
       <workItem from="1558507387421" duration="1066000" />
-      <workItem from="1558552037749" duration="10313000" />
+      <workItem from="1558552037749" duration="21643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64545000" />
+    <option name="totallyTimeSpent" value="75875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="27" width="1874" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19693655" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19693655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -372,18 +430,18 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3297062" />
-      <window_info anchor="bottom" x="64" y="441" width="1104" height="443" id="Run" order="2" visible="true" weight="0.2704471" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934713" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" x="64" y="441" width="1104" height="443" id="Run" order="2" visible="true" weight="0.2704471" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3297062" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3297062" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -395,26 +453,26 @@
       <window_info anchor="right" id="Database" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19256018" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19693655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3297062" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3297062" />
-      <window_info anchor="bottom" x="64" y="441" width="1104" height="443" id="Run" order="3" type="WINDOWED" visible="true" weight="0.26985854" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3297062" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
+      <window_info anchor="bottom" x="64" y="441" width="1104" height="443" id="Run" order="2" visible="true" weight="0.2704471" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3297062" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -430,148 +488,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/service/AddLocationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="74" lean-forward="true" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/GetAllLocationsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/AddServicePackageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/user/RegisterCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/sqlite-jdbc-3.27.2.1.jar!/org/sqlite/jdbc3/JDBC3Statement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Slot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#756#757#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/reservation/MakeReservationCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandData/GetReservationByUserCommandData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#381#382#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandData/AddSlotCommandData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandData/GetAvailableSlotsCommandData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/GetAvailableSlotsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="45" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/servicePackage/AddServicePackageCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandResult/AddServicePackageResultData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandResult/AddSlotResultData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/command/commandResult/GetAllLocationsResultData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -616,38 +532,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandResult/LoginResultData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/command/commandResult/RegisterResultData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
           <folding>
             <element signature="e#459#460#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandResult/MakeReservationResultData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -677,13 +567,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandData/RegisterCommandData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -804,17 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandData/MakeReservationCommandData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/MakeReservationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
@@ -825,27 +697,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommandHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/database/DataAccess/SlotDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="345">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java">
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        <state relative-caret-position="62">
+          <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandData/CancelReservationCommandData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DataAccess/ReservationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/StreamOut.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/ObjectEncoderDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="22" column="93" lean-forward="true" selection-start-line="22" selection-start-column="93" selection-end-line="22" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/CommandHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="338" selection-start-line="338" selection-end-line="343" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/commandModels/CommandType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="270">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandData/AddLocationCommandData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="118" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandData/AddServicePackageCommandData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandData/RegisterCommandData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandResult/LoginResultData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#664#665#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandData/AddSlotCommandData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/AddLocationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/commandModels/CommandResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/RegisterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/LoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandData/MakeReservationCommandData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#709#710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command/commandResult/MakeReservationResultData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,57 +903,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DataAccess/SlotDao.java">
+    <entry file="file://$PROJECT_DIR$/src/command/commandResult/CancelReservationResultData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="95" column="38" lean-forward="true" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DataAccess/ReservationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="113" column="82" selection-start-line="113" selection-start-column="82" selection-end-line="113" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/CancelReservationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        <state relative-caret-position="630">
+          <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+    <entry file="file://$PROJECT_DIR$/src/web/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="79" column="56" lean-forward="true" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+        <state relative-caret-position="67">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/DefaultHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/command/commandData/CancelReservationCommandData.java">
+    <entry file="file://$PROJECT_DIR$/src/web/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="195">
+          <caret line="13" column="44" lean-forward="true" selection-end-line="230" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/site.html">
+    <entry file="file://$PROJECT_DIR$/src/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        <state relative-caret-position="1262">
+          <caret line="349" column="54" lean-forward="true" selection-start-line="349" selection-start-column="54" selection-end-line="349" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#3;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#3;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#4;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#2;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#div#4;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#1;n#div#4;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
