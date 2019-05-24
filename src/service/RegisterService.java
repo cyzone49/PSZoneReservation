@@ -24,7 +24,13 @@ public class RegisterService {
 
         if (success) {
             System.out.println("\tSUCCESS. New User inserted into DB");
-            return new CommandResult(true, new RegisterResultData(user.getUsername()+user.getUserID()));
+            RegisterResultData data = new RegisterResultData();
+            data.setUserID(user.getUserID());
+            data.setUsername(user.getUsername());
+            data.setPassword(user.getPassword());
+            data.setEmail(user.getEmail());
+            data.setPhone(user.getPhone());
+            return new CommandResult(true, data);
 
         } else {
             System.out.println("\tFAILED. User NOT inserted into DB");

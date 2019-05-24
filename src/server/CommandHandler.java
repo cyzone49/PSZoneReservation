@@ -11,6 +11,7 @@ import com.google.gson.*;
 import command.reservation.CancelReservationCommand;
 import command.reservation.GetReservationByIDCommand;
 import command.reservation.GetReservationByUserCommand;
+import command.servicePackage.GetAllServicePackagesCommand;
 import model.commandModels.CommandResult;
 import model.commandModels.CommandType;
 import command.location.AddLocationCommand;
@@ -163,6 +164,23 @@ public class CommandHandler implements HttpHandler
                     else
                     {
                         AddServicePackageCommand command = new AddServicePackageCommand(commandData);
+
+                        CommandResult commandResult = command.execute();
+                        success = sendResult(commandResult, exchange, username);
+                    }
+                }
+                else if(myCommandType == CommandType.GET_PACKAGES)
+                {
+                    GetAllServicePackagesCommandData commandData = null;
+                    commandData = gson.fromJson(reqData, GetAllServicePackagesCommandData.class);
+                    if(commandData == null)
+                    {
+                        System.out.print("Invalid server.Server Get All Packages Command Data");
+                    }
+                    else
+                    {
+                        System.out.println("GOT HEREEEEE");
+                        GetAllServicePackagesCommand command = new GetAllServicePackagesCommand(commandData);
 
                         CommandResult commandResult = command.execute();
                         success = sendResult(commandResult, exchange, username);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Family Map app server </title>
+    <title> PSZone Reservation App server</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,129 +12,164 @@
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 
     <link rel="stylesheet" href="css/main.css">
-    <!--     <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+
+<!--     <script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+    <style>
+        .inputbox {
+            width:100%;
+            padding: 0 30px 0 10px;
+        }
+    </style>
 </head>
 <body onload="hideInputBoxes()">
-<div style="text-align:center;">
-    <h1>
-        PSZoneReservation very simple web interface
-    </h1>
+    <div style="text-align:center;">
+        <h1>
+            PSZoneReservation
+        </h1>
+        <h2>A very simple api testing interface</h2>
 
-</div>
-
-<div class="container" style="display: grid; grid-template-columns: repeat(2,1fr);">
-
-<!--    Commands -->
-    <div class="commands">
-        <!-- Commands for the Database -->
-        <div class="commands-admin">
-            <h1 style="padding-left:1cm; text-decoration: underline;">Admin Commands</h1>
-            <ul>
-                <li>
-                    <a href="javascript:addLocation()">ADD_LOCATION</a>
-                </li>
-                <li>
-                    <a href="javascript:addPackage()">ADD_PACKAGE</a>
-                </li>
-                <li>
-                    <a href="javascript:addSlot()">ADD_SLOT</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="commands-user">
-            <h1 style="padding-left:1cm; text-decoration: underline;">User Commands</h1>
-            <ul>
-                <li>
-                    <a href="javascript:login()">LOGIN</a>
-                </li>
-                <li>
-                    <a href="javascript:register()">REGISTER</a>
-                </li>
-                <li>
-                    <a href="javascript:getLocation()">GET_LOCATIONS</a>
-                </li>
-                <li>
-                    <a href="javascript:getPackage()">GET_PACKAGES</a>
-                </li>
-                <li>
-                    <a href="javascript:getAvailableSlots()">GET_AVAILABLE_SLOTS</a>
-                </li>
-                <li>
-                    <a href="javascript:makeReservation()">MAKE_RESERVATION</a>
-                </li>
-                <li>
-                    <a href="javascript:getReservationByID()">GET_RESERVATION_BY_ID</a>
-                </li>
-                <li>
-                    <a href="javascript:getReservationByUser()">GET_RESERVATION_BY_USER</a>
-                </li>
-                <li>
-                    <a href="javascript:cancelReservation()">CANCEL_RESERVATION</a>
-                </li>
-
-            </ul>
-        </div>
     </div>
 
+    <div class="container" style="display: grid; grid-template-columns: 400px auto;">
 
-<!--    input boxes-->
-    <div class="inputbox-wrapper">
-        <div class="inputbox" id="inputbox-register">
-            <p><input type="text" id="register-username" style="width: 300px" value="username"></p>
-            <p><input type="text" id="register-password" style="width: 300px" value="password"></p>
-            <p><input type="text" id="register-email" style="width: 300px" value="email"></p>
-            <p><input type="text" id="register-phone" style="width: 300px" value="phone"></p>
+    <!--    Commands -->
+        <div class="commands" style="border:dashed">
+            <!-- Commands for the Database -->
+            <div class="commands-admin">
+                <h1 style="padding-left:1cm; text-decoration: underline;">Admin Commands</h1>
+                <ul>
+                    <li><a href="javascript:addLocation()">ADD_LOCATION</a></li>
+                    <li><a href="javascript:addPackage()">ADD_PACKAGE</a></li>
+                    <li><a href="javascript:addSlot()">ADD_SLOT</a></li>
+                </ul>
+            </div>
+
+            <div class="commands-user" >
+                <h1 style="padding-left:1cm; text-decoration: underline;">User Commands</h1>
+                <ul>
+                    <li><a href="javascript:login()">LOGIN</a></li>
+                    <li><a href="javascript:register()">REGISTER</a></li>
+                    <li><a href="javascript:getLocation()">Get all locations</a></li>
+                    <li><a href="javascript:getPackage()">Get available packages</a></li>
+                    <li><a href="javascript:getAvailableSlots()">Display available slots (by location, package, or both)</a></li>
+                    <li><a href="javascript:makeReservation()">Make a Reservation</a></li>
+                    <li><a href="javascript:getReservationByID()">Get a reservation by ID</a></li>
+                    <li><a href="javascript:getReservationByUser()">Get my Reservations</a></li>
+                    <li><a href="javascript:cancelReservation()">CANCEL_RESERVATION</a></li>
+                </ul>
+            </div>
+        </div>
+    <!--    input boxes-->
+        <div class="inputbox-wrapper" style="border:dashed">
+            <div class="inputbox" id="inputbox-register">
+                <p><input type="text" id="register-username" value="username"></p>
+                <p><input type="text" id="register-password" value="password"></p>
+                <p><input type="text" id="register-email" value="email"></p>
+                <p><input type="text" id="register-phone" value="phone"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-login">
+                <p><input type="text" id="login-username" value="username"></p>
+                <p><input type="text" id="login-password" value="password"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-add-location">
+                <p><input type="text" id="add-location-name" value="location name (must be unique)"></p>
+                <p><input type="text" id="add-location-streetaddress" value="street address"></p>
+                <p><input type="text" id="add-location-city" value="city"></p>
+                <p><input type="text" id="add-location-state" value="state"></p>
+                <p><input type="text" id="add-location-zipcode" value="zip code"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-add-package">
+                <p><input type="text" id="add-package-name" value="Package name (must be unique)"></p>
+                <p><input type="text" id="add-package-hourlyrate" value="Hourly Rate"></p>
+                <p><input type="text" id="add-location-maxoccupancy" value="Max Occupancy"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-add-slot">
+                <p><input type="text" id="add-slot-packageID" value="PackageID (must already exist)"></p>
+                <p><input type="text" id="add-slot-locationID" value="LocationID (must already exist)"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-get-available-slots">
+                <p>Get available slots by either (1) Location, (2) Package, or (3) Both! (But not NONE)</p>
+                <p><input type="text" id="get-available-slots-locationID" ># LocationID in int</p>
+                <p><input type="text" id="get-available-slots-packageID" ># PackageID in int</p>
+            </div>
+
+            <div class="inputbox" id="inputbox-make-reservation">
+                <p><input type="text" id="make-reservation-slotID" value="slotID (must be available)"></p>
+                <p><input type="text" id="make-reservation-userID" value="userID"></p>
+                <p><input type="text" id="make-reservation-startTime" value=10000># Some type of time picker will be here </p>
+                <p><input type="text" id="make-reservation-duration" value=0.0># Duration in double</p>
+
+            </div>
+
+            <div class="inputbox" id="inputbox-get-reservation-by-ID">
+                <p><input type="text" id="get-reservation-id" value="Reservation confirmation"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-get-reservation-by-user">
+                <p><input type="text" id="get-reservation-userID" value="userID"></p>
+            </div>
+
+            <div class="inputbox" id="inputbox-cancel-reservation">
+                <p><input type="text" id="cancel-reservation-id" value="Reservation confirmation"></p>
+            </div>
+
         </div>
 
-        <div class="inputbox" id="inputbox-login">
-            <p><input type="text" id="login-username" style="width: 300px" value="username"></p>
-            <p><input type="text" id="login-password" style="width: 300px" value="password"></p>
-        </div>
 
-        <div class="inputbox" id="inputbox-add-location">
-            <p><input type="text" id="add-location-name" style="width: 300px" value="location name (must be unique)"></p>
-            <p><input type="text" id="add-location-streetaddress" style="width: 300px" value="street address"></p>
-            <p><input type="text" id="add-location-city" style="width: 300px" value="city"></p>
-            <p><input type="text" id="add-location-state" style="width: 300px" value="state"></p>
-            <p><input type="text" id="add-location-zipcode" style="width: 300px" value="zip code"></p>
-        </div>
-
-        <div class="inputbox" id="inputbox-add-package">
-            <p><input type="text" id="add-package-name" style="width: 300px" value="Package name (must be unique)"></p>
-            <p><input type="text" id="add-package-hourlyrate" style="width: 300px" value="Hourly Rate"></p>
-            <p><input type="text" id="add-location-maxoccupancy" style="width: 300px" value="Max Occupancy"></p>
-        </div>
-
-        <div class="inputbox" id="inputbox-add-slot">
-            <p><input type="text" id="add-slot-packageID" style="width: 300px" value="PackageID (must already exist)"></p>
-            <p><input type="text" id="add-slot-locationID" style="width: 300px" value="LocationID (must already exist)"></p>
-        </div>
     </div>
-</div>
 
-
-<div class="w3-row forumDiv">
-    <div class="w3-col m4">
-        COMMAND: <input type="text" id="handleBox" name="handleBox" style="width: 400px">
-    </div>
-    <div class="w3-col m5">
+    <div style="margin: 20px 0 0 20px">
         <input type="button" name="Submit" value="Submit" onclick="submit()">
+        <div id="handleBox" style="display: inline; font-size: 30px; font-weight: 700; color: red"></div>
     </div>
-</div>
-<div class="w3-row" style="margin:10px;">
-    <p class="w3-col w3-container center" style="width:3%"/>
-    <div class="w3-col w3-container bottom" style="width:45%">
-        Request Body: <textarea type="text" id="requestBox" name="requestBox" class="requestBody" style="width:50%; min-height:300px"></textarea>
+
+
+
+
+
+    <div class="container" id="resultbox" style="display: block; padding: 20px; font-weight: 700; border: #222222; min-height: 20px">
+        <div id="resultbox-error" style="display:none; color: red"></div>
+
+        <div id="resultbox-user" style="display:none">
+            <h3>User information:</h3>
+        </div>
+        <br>
+
+        <div style="display:grid; grid-template-columns: 700px auto">
+            <div id="resultbox-locations" style="display:none">
+            </div>
+
+            <div id="resultbox-packages" style="display:none">
+            </div>
+        </div>
+
+
+
+        <div id="resultbox-available-slots" style="display:none">
+            <h3>Locations:</h3>
+        </div>
+
+        <br>
     </div>
-    <p class="w3-col w3-container center" style="width:3%"/>
-    <div class="w3-col w3-container bottom" style="width:45%">
-        Response From the server: <textarea type="text" id="response" class="responseBody" style="width:60%; min-height:300px" readonly></textarea>
-    </div>
-    <div>
+
+    <div class="w3-row" style="margin:10px;">
         <p class="w3-col w3-container center" style="width:3%"/>
+        <div class="w3-col w3-container bottom" style="width:45%">
+            Request Body: <textarea type="text" id="requestBox" name="requestBox" class="requestBody" style="width:50%; min-height:300px"></textarea>
+        </div>
+        <p class="w3-col w3-container center" style="width:3%"/>
+        <div class="w3-col w3-container bottom" style="width:45%">
+            Response From the server: <textarea type="text" id="response" class="responseBody" style="width:60%; min-height:300px" readonly></textarea>
+        </div>
+        <div>
+            <p class="w3-col w3-container center" style="width:3%"/>
+        </div>
     </div>
-</div>
 </body>
 
 <script>
@@ -145,24 +180,301 @@
     var phone = null;
 
     var reservations = [];
-    var res = null
-    var errorMsg = null
+    var locations = [];
+    var packages = [];
+    var availableSlots = [];
 
+    var res = null;
+    var req = null;
+
+    var errorMsg = null;
+
+    function accessResponse(r) {
+        res = JSON.parse(r);
+
+        var resultData = res.resultData;
+        var success = res.success;
+        var commandType = resultData.commandType;
+
+        if(success) {
+            document.getElementById("resultbox-error").style.display= 'none';
+
+            if(commandType === "LOGIN" || commandType === "REGISTER") {
+                username = resultData.username;
+                password =  resultData.password;
+                email = resultData.email;
+                phone = resultData.phone;
+                userID = resultData.userID;
+
+                var myUser = "";
+                myUser += "Welcome! user " + username;
+                myUser += "<h4>User Information</h4>";
+                myUser += "<ul>";
+                myUser += "<li>User ID: " + userID + "</li>";
+                myUser += "<li>User Email: " + email + "</li>";
+                myUser += "<li>User Phone Number: " + phone + "</li>";
+                myUser += "</ul>";
+
+                document.getElementById("resultbox-user").innerHTML = myUser;
+
+                document.getElementById("resultbox-user").style.display = 'block';
+
+            }
+            else if(commandType === "GET_LOCATIONS") {
+                locations = resultData.locations;
+
+                var myTable = "<h3>Locations:</h3>";
+                myTable += "<table style=\"border: 1px solid black;\">";
+                myTable += "<tr>";
+                myTable += "<th style='width: 50px; color: red;'>locationID</th>";
+                myTable += "<th style='width: 100px; color: red;'>locationName</th>";
+                myTable += "<th style='width: 300px; color: red;'>Street Address</th>";
+                myTable += "<th style='width: 100px; color: red;'>City</th>";
+                myTable += "<th style='width: 100px; color: red;'>State</th>";
+                myTable += "<th style='width: 100px; color: red;'>Zip code</th>";
+                myTable += "</tr>";
+
+
+                locations.forEach(function(loc) {
+                    myTable += "<tr>";
+                    myTable += "<th style='width: 100px;'>" + loc.locationID + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.locationName + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.streetAddress + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.city + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.state + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.zipcode + "</th>";
+                    myTable += "</tr>";
+                });
+
+                myTable += "</table>";
+
+                document.getElementById("resultbox-locations").innerHTML = myTable;
+                document.getElementById("resultbox-locations").style.display = 'block';
+
+            }
+            else if(commandType === "GET_PACKAGES") {
+                packages = resultData.packages;
+
+                var myTable = "<h3>Packages:</h3>";
+                myTable += "<table style=\"border: 1px solid black;\">";
+                myTable += "<tr>";
+                myTable += "<th style='width: 50px; color: red;'>packageID</th>";
+                myTable += "<th style='width: 100px; color: red;'>packageName</th>";
+                myTable += "<th style='width: 100px; color: red;'>hourlyRate</th>";
+                myTable += "<th style='width: 100px; color: red;'>maxOccupancy</th>";
+                myTable += "</tr>";
+
+
+                packages.forEach(function(loc) {
+                    myTable += "<tr>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageID + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageName + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.hourlyRate + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.maxOccupancy + "</th>";
+                    myTable += "</tr>";
+                });
+
+                myTable += "</table>";
+
+                document.getElementById("resultbox-packages").innerHTML = myTable;
+                document.getElementById("resultbox-packages").style.display = 'block';
+
+            }
+            else if(commandType === "GET_AVAILABLE_SLOTS") {
+                availableSlots = resultData.slots;
+
+                var myTable = "<h3>AVAILABLE SLOTS:</h3>";
+                myTable += "<table style=\"border: 1px solid black;\">";
+                myTable += "<tr>";
+                myTable += "<th style='width: 50px; color: red;'>slotID</th>";
+                myTable += "<th style='width: 100px; color: red;'>Package Name</th>";
+                myTable += "<th style='width: 100px; color: red;'>Hourly Rate</th>";
+                myTable += "<th style='width: 100px; color: red;'>Max Occupancy</th>";
+                myTable += "<th style='width: 100px; color: red;'>Address</th>";
+                myTable += "<th style='width: 100px; color: red;'>Availability</th>";
+                myTable += "</tr>";
+
+                availableSlots.forEach(function(loc) {
+                    myTable += "<tr>";
+                    myTable += "<th style='width: 100px;'>" + loc.slotID + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageName + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.hourlyRate + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.maxOccupancy + "</th>";
+                    myTable += "<th style='width: 400px;'>" + loc.locationAddress + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.availability + "</th>";
+                    myTable += "</tr>";
+                });
+
+                myTable += "</table>";
+
+                document.getElementById("resultbox-available-slots").innerHTML = myTable;
+                document.getElementById("resultbox-available-slots").style.display = 'block';
+            }
+            else if(commandType === "MAKE_RESERVATION") {
+                reservations.push(resultData.confirmationID);
+            }
+            else if(commandType === "CANCEL_RESERVATION") {
+                removeReservation(reservations, resultData.confirmationID);
+            }
+
+        } else {
+            errorMsg = resultData.msg;
+            document.getElementById("resultbox-error").innerHTML = errorMsg;
+            document.getElementById("resultbox-error").style.display= 'block';
+        }
+
+        document.getElementById("handleBox").value = "";
+    }
+
+    function removeReservation(arr) {
+        var what, a = arguments, L = a.length, ax;
+        while (L > 1 && arr.length) {
+            what = a[--L];
+            while ((ax= arr.indexOf(what)) !== -1) {
+                arr.splice(ax, 1);
+            }
+        }
+        return arr;
+    }
+
+    function login()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "LOGIN";
+        var uname = document.getElementById("login-username").value;
+        var pw = document.getElementById("login-password").value;
+        req = formatJson("{\"commandType\":\"LOGIN\"," +
+            "\"username\":\"" + uname +
+            "\",\"password\":\"" + pw + "\"}");
+
+        hideInputBoxes();
+        document.getElementById("inputbox-login").style.display = "block";
+    }
+    function register()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "REGISTER";
+        var uname = document.getElementById("register-username").value;
+        var pw = document.getElementById("register-password").value;
+        var p = document.getElementById("register-phone").value;
+        var e = document.getElementById("register-email").value;
+        req = formatJson("{\"commandType\":\"REGISTER\"," +
+            "\"username\":\"" + uname +
+            "\",\"password\":\"" + pw +
+            "\",\"email\":\"" + e +
+            "\",\"phone\":\"" + p + "\"}");
+        hideInputBoxes()
+        document.getElementById("inputbox-register").style.display = "block";
+
+    }
+    function addLocation()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "ADD_LOCATION";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes()
+        document.getElementById("inputbox-add-location").style.display = "block";
+    }
+    function getLocation()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "GET_LOCATIONS";
+        req = formatJson("{\"commandType\":\"GET_LOCATIONS\"}");
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes()
+    }
+    function addPackage()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "ADD_PACKAGE";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes()
+        document.getElementById("inputbox-add-package").style.display = "block";
+    }
+    function getPackage()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "GET_PACKAGES";
+        req = formatJson("{\"commandType\":\"GET_PACKAGES\"}");
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+    }
+    function addSlot()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "ADD_SLOT";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes()
+        document.getElementById("inputbox-add-slot").style.display = "block";
+    }
+    function getAvailableSlots()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "GET_AVAILABLE_SLOTS";
+        var locID = document.getElementById("get-available-slots-locationID").value;
+        var pacID = document.getElementById("get-available-slots-packageID").value;
+        if(pacID == "") { pacID = -1;} else { pacID = Number(pacID); }
+        if(locID == "") { locID = -1;} else { locID = Number(locID); }
+        req = formatJson("{\"commandType\":\"GET_AVAILABLE_SLOTS\",\"locationID\":" + locID +
+            ",\"packageID\":" + pacID + "}");
+
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+        document.getElementById("inputbox-get-available-slots").style.display = 'block';
+    }
+    function makeReservation()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "MAKE_RESERVATION";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+        document.getElementById("inputbox-make-reservation").style.display = 'block';
+    }
+    function getReservationByID()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "GET_RESERVATION_BY_ID";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+        document.getElementById("inputbox-get-reservation-by-ID").style.display = 'block';
+    }
+    function getReservationByUser()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "GET_RESERVATION_BY_USER";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+        document.getElementById("inputbox-get-reservation-by-user").style.display = 'block';
+    }
+    function cancelReservation()
+    {
+        window.scrollTo(0,0);
+        document.getElementById("handleBox").innerText = "CANCEL_RESERVATION";
+        document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+        document.getElementById("inputbox-cancel-reservation").style.display = 'block';
+
+    }
 
     function submit()
     {
         // var handle = document.getElementById("handleBox").value;
         var handle = "/command";
-        var requestBody = document.getElementById("requestBox").value;
+        console.log("PRINT OUT REQUEST STRING:");
+        console.log(req)
+        var requestBody = req;
+        document.getElementById("requestBox").value = req;
         // var token = document.getElementById("authToken").value;
 
         var method = "post";
 
         send(handle,requestBody, method);
+
+        hideInputBoxes();
         return false;
     }
 
-    function send(path, params, method, token)
+    function send(path, params, method)
     {
         var obj = new XMLHttpRequest();
         obj.onreadystatechange = function()
@@ -177,6 +489,15 @@
         // obj.setRequestHeader("Authorization", token);
         obj.send(params);
     }
+
+    function hideInputBoxes() {
+        var x = document.getElementsByClassName("inputbox");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = 'none';
+        }
+    }
+
 
     function formatJson(inputText)
     {
@@ -225,149 +546,5 @@
         return temp;
     }
 
-    function hideInputBoxes() {
-        var x = document.getElementsByClassName("inputbox");
-        var i;
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = 'none';
-        }
-    }
-
-    function accessResponse(r) {
-        res = JSON.parse(r)
-
-        var resultData = res.resultData
-        var success = res.success
-        var commandType = resultData.commandType
-
-        if(success == true) {
-
-            if(commandType === "LOGIN") {
-                username = resultData.username
-                password =  resultData.password
-                email = resultData.email
-                phone = resultData.phone
-                userID = resultData.userID
-            }
-            else if(commandType === "MAKE_RESERVATION") {
-                reservations.push(resultData.confirmationID)
-            }
-            else if(commandType === "CANCEL_RESERVATION") {
-                removeReservation(reservations, resultData.confirmationID)
-            }
-
-        } else {
-            errorMsg = resultData.msg
-        }
-    }
-
-    function removeReservation(arr) {
-        var what, a = arguments, L = a.length, ax;
-        while (L > 1 && arr.length) {
-            what = a[--L];
-            while ((ax= arr.indexOf(what)) !== -1) {
-                arr.splice(ax, 1);
-            }
-        }
-        return arr;
-    }
-
-    function login()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "LOGIN";
-        var uname = document.getElementById("login-username").value;
-        var pw = document.getElementById("login-password").value;
-        document.getElementById("requestBox").value = formatJson("{\"commandType\":\"LOGIN\"," +
-            "\"username\":\"" + uname +
-            "\",\"password\":\"" + pw + "\"}");
-        hideInputBoxes()
-        document.getElementById("inputbox-login").style.display = "block";
-
-    }
-    function register()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "REGISTER";
-        var uname = document.getElementById("register-username").value;
-        var pw = document.getElementById("register-password").value;
-        var p = document.getElementById("register-phone").value;
-        var e = document.getElementById("register-email").value;
-        document.getElementById("requestBox").value = formatJson("{\"commandType\":\"REGISTER\"," +
-            "\"username\":\"" + uname +
-            "\",\"password\":\"" + pw +
-            "\",\"email\":\"" + e +
-            "\",\"phone\":\"" + p + "\"}");
-        hideInputBoxes()
-        document.getElementById("inputbox-register").style.display = "block";
-
-    }
-    function addLocation()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "ADD_LOCATION";
-        document.getElementById("requestBox").value = "";
-        hideInputBoxes()
-        document.getElementById("inputbox-add-location").style.display = "block";
-    }
-    function getLocation()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "GET_LOCATIONS";
-        document.getElementById("requestBox").value = "";
-        hideInputBoxes()
-    }
-    function addPackage()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "ADD_PACKAGE";
-        document.getElementById("requestBox").value = "";
-        hideInputBoxes()
-        document.getElementById("inputbox-add-package").style.display = "block";
-    }
-    function getPackage()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "GET_PACKAGES";
-        document.getElementById("requestBox").value = "";
-    }
-    function addSlot()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "ADD_SLOT";
-        document.getElementById("requestBox").value = "";
-        hideInputBoxes()
-        document.getElementById("inputbox-add-slot").style.display = "block";
-    }
-    function getAvailableSlots()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "GET_AVAILABLE_SLOTS";
-        document.getElementById("requestBox").value = "";
-    }
-    function makeReservation()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "MAKE_RESERVATION";
-        document.getElementById("requestBox").value = "";
-    }
-    function getReservationByID()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "GET_RESERVATION_BY_ID";
-        document.getElementById("requestBox").value = "";
-    }
-    function getReservationByUser()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "GET_RESERVATION_BY_USER";
-        document.getElementById("requestBox").value = "";
-    }
-    function cancelReservation()
-    {
-        window.scrollTo(0,document.body.scrollHeight);
-        document.getElementById("handleBox").value = "CANCEL_RESERVATION";
-        document.getElementById("requestBox").value = "";
-    }
 </script>
 </html>
