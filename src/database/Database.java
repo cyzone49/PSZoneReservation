@@ -88,12 +88,12 @@ public class Database {
 
     public boolean markSlotAvailable(int slotID) {
         SlotDao dao = new SlotDao();
-        return dao.markSlotUnavailability(connection, slotID, 1);
+        return dao.changeSlotAvailability(connection, slotID, 1);
     }
 
     public boolean markSlotUnavailable(int slotID) {
         SlotDao dao = new SlotDao();
-        return dao.markSlotUnavailability(connection, slotID, 0);
+        return dao.changeSlotAvailability(connection, slotID, 0);
     }
 
     public String insertReservation(Reservation reservation) {
@@ -161,7 +161,7 @@ public class Database {
     }
 
 
-    public boolean deleteReservation(int confirmationID) {
+    public boolean deleteReservation(String confirmationID) {
         ReservationDao dao = new ReservationDao();
         return dao.deleteReservation(connection, confirmationID);
     }

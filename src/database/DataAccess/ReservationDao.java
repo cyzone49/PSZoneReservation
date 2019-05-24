@@ -105,13 +105,12 @@ public class ReservationDao {
                     " inner join PACKAGES on SLOTS.packageID = PACKAGES.rowid" +
                     " where RESERVATIONS.confirmationID = \'" + confirmationID + "\'";
 
-            System.out.println("\n\n\n");
-            System.out.println(GET_RESERVATION_BY_ID);
+
 
             rs = statement.executeQuery(GET_RESERVATION_BY_ID);
 
             if(!rs.next()) {
-                System.out.println("\tNo matching reservation data available");
+                System.out.println("\tNo reservation matching input ID in database");
                 return null;
             }
 
@@ -191,14 +190,14 @@ public class ReservationDao {
         return list;
     }
 
-    public boolean deleteReservation(Connection connection, int confirmationID) {
+    public boolean deleteReservation(Connection connection, String confirmationID) {
         Statement statement = null;
 
         try {
             statement = connection.createStatement();
             statement.executeUpdate(CREATE_RESERVATIONS_TABLE);
 
-            String DELETE_RESERVATION = "delete from RESERVATIONS where confirmationID = " + confirmationID;
+            String DELETE_RESERVATION = "delete from RESERVATIONS where confirmationID = \'" + confirmationID + "\'";
 
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_RESERVATION);
 

@@ -3,14 +3,16 @@ package command.commandData;
 import model.commandModels.CommandType;
 
 public class CancelReservationCommandData extends ServerCommandData {
-    private int confirmationID;
+    private String id;
+//    private String username;
 
-    public CancelReservationCommandData(int confirmationID) {
+    public CancelReservationCommandData(String confirmationID) {
         setCommandType(CommandType.CANCEL_RESERVATION);
-        this.confirmationID = confirmationID;
+        this.id = confirmationID;
     }
 
-    public int getConfirmationID() {
-        return confirmationID;
+    public String getConfirmationID() {
+        return this.id;
     }
+
 }

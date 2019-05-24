@@ -72,7 +72,7 @@ public class SlotDao {
     }
 
 
-    public boolean markSlotUnavailability(Connection connection, int slotID, int availability) {
+    public boolean changeSlotAvailability(Connection connection, int slotID, int availability) {
         Statement statement = null;
         try {
             statement = connection.createStatement();

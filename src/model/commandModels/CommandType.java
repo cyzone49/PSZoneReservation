@@ -19,7 +19,7 @@ public enum CommandType
     CANCEL_RESERVATION,
 
     // delete
-    CLEAR, DELETE_RESERVATION, DELETE_TABLE,
+    CLEAR,
 
     ERROR,
 
