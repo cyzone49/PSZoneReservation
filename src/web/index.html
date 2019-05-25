@@ -129,9 +129,6 @@
     </div>
 
 
-
-
-
     <div class="container" id="resultbox" style="display: block; padding: 20px; font-weight: 700; border: #222222; min-height: 20px">
         <div id="resultbox-error" style="display:none; color: red"></div>
 
@@ -148,24 +145,33 @@
             </div>
         </div>
 
-
-
         <div id="resultbox-available-slots" style="display:none">
             <h3>Locations:</h3>
+        </div>
+
+        <div id="resultbox-my-reservations" style="display:none">
+
         </div>
 
         <br>
     </div>
 
-    <div class="w3-row" style="margin:10px;">
-        <p class="w3-col w3-container center" style="width:3%"/>
-        <div class="w3-col w3-container bottom" style="width:45%">
-            Request Body: <textarea type="text" id="requestBox" name="requestBox" class="requestBody" style="width:50%; min-height:300px"></textarea>
+    <div class="" style="margin:10px; display:grid; grid-template-columns: 50% 50%">
+        <div>
+            <p class="w3-col w3-container center" style="width:3%"/>
+            <div class="w3-col w3-container bottom" style="width:45%">
+                Request Body: <textarea type="text" id="requestBox" name="requestBox" class="requestBody"
+                                        style="min-height:300px;min-width: 500px"></textarea>
+            </div>
         </div>
-        <p class="w3-col w3-container center" style="width:3%"/>
-        <div class="w3-col w3-container bottom" style="width:45%">
-            Response From the server: <textarea type="text" id="response" class="responseBody" style="width:60%; min-height:300px" readonly></textarea>
+        <div>
+            <p class="w3-col w3-container center" style="width:3%"/>
+            <div class="w3-col w3-container bottom" style="width:45%">
+                Response From the server: <textarea type="text" id="response" class="responseBody"
+                                                    style="min-height:300px; min-width: 500px" readonly></textarea>
+            </div>
         </div>
+
         <div>
             <p class="w3-col w3-container center" style="width:3%"/>
         </div>
@@ -312,9 +318,42 @@
             }
             else if(commandType === "MAKE_RESERVATION") {
                 reservations.push(resultData.confirmationID);
+
             }
             else if(commandType === "CANCEL_RESERVATION") {
                 removeReservation(reservations, resultData.confirmationID);
+            }
+            else if(commandType === "GET_RESERVATION_BY_USER") {
+                reservations = resultData.reservationList;
+
+                var myTable = "<h3>My Reservations</h3>";
+                myTable += "<table style=\"border: 1px solid black;\">";
+                myTable += "<tr>";
+                myTable += "<th style='width: 50px; color: red;'>res ID</th>";
+                myTable += "<th style='width: 100px; color: red;'>start time</th>";
+                myTable += "<th style='width: 100px; color: red;'>duration</th>";
+                myTable += "<th style='width: 100px; color: red;'>user name</th>";
+                myTable += "<th style='width: 100px; color: red;'>package name</th>";
+                myTable += "<th style='width: 100px; color: red;'>total</th>";
+                myTable += "<th style='width: 100px; color: red;'>confirmation ID</th>";
+                myTable += "</tr>";
+
+                reservations.forEach(function(loc) {
+                    myTable += "<tr>";
+                    myTable += "<th style='width: 100px;'>" + loc.reservationID+ "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.startTime + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.duration + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.username + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageName + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.total + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.confirmationID + "</th>";
+                    myTable += "</tr>";
+                });
+
+                myTable += "</table>";
+
+                document.getElementById("resultbox-my-reservations").innerHTML = myTable;
+                document.getElementById("resultbox-my-reservations").style.display = 'block';
             }
 
         } else {
@@ -426,6 +465,13 @@
     {
         window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "MAKE_RESERVATION";
+        var sid = document.getElementById("make-reservation-slotID").value;
+        var uid = document.getElementById("make-reservation-userID").value;
+        var time = document.getElementById("make-reservation-startTime").value;
+        var duration = document.getElementById("make-reservation-duration").value;
+        req = formatJson("{\"commandType\":\"MAKE_RESERVATION\",\"slotID\":" +
+            + parseInt(sid) + ",\"userID\":" +
+            + parseInt(uid) + ",\"startTime\":" + parseInt(time) + ",\"duration\":" + parseFloat(duration) + "}");
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
         document.getElementById("inputbox-make-reservation").style.display = 'block';
@@ -434,6 +480,8 @@
     {
         window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_RESERVATION_BY_ID";
+        var id = document.getElementById("get-reservation-id").value;
+        req = formatJson("{\"commandType\":\"GET_RESERVATION_BY_ID\",\"id\":\"" + id + "\"}")
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
         document.getElementById("inputbox-get-reservation-by-ID").style.display = 'block';
@@ -442,6 +490,11 @@
     {
         window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_RESERVATION_BY_USER";
+        var currID = document.getElementById("get-reservation-userID").value;
+        if(currID === "userID") {
+            currID = userID;
+        }
+        req = formatJson("{\"commandType\":\"GET_RESERVATION_BY_USER\",\"userID\":\"" + currID + "\"}")
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
         document.getElementById("inputbox-get-reservation-by-user").style.display = 'block';
@@ -451,6 +504,8 @@
         window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "CANCEL_RESERVATION";
         document.getElementById("requestBox").value = "";
+        var currid = document.getElementById("cancel-reservation-id").value;
+        req = formatJson("{\"commandType\":\"CANCEL_RESERVATION\",\"id\":\"" + currid + "\"}");
         hideInputBoxes();
         document.getElementById("inputbox-cancel-reservation").style.display = 'block';
 

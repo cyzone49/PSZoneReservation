@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Family Map app server </title>
+    <title> PSZone Reservation App server</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,8 +94,8 @@
 
             <div class="inputbox" id="inputbox-get-available-slots">
                 <p>Get available slots by either (1) Location, (2) Package, or (3) Both! (But not NONE)</p>
-                <p><input type="text" id="get-available-slots-locationID" value="locationID"></p>
-                <p><input type="text" id="get-available-slots-packageID" value="packageID"></p>
+                <p><input type="text" id="get-available-slots-locationID" ># LocationID in int</p>
+                <p><input type="text" id="get-available-slots-packageID" ># PackageID in int</p>
             </div>
 
             <div class="inputbox" id="inputbox-make-reservation">
@@ -107,44 +107,65 @@
             </div>
 
             <div class="inputbox" id="inputbox-get-reservation-by-ID">
-                <p><input type="text" id="get-reservation-confirmation" value="Reservation confirmation"></p>
+                <p><input type="text" id="get-reservation-id" value="Reservation confirmation"></p>
             </div>
 
             <div class="inputbox" id="inputbox-get-reservation-by-user">
                 <p><input type="text" id="get-reservation-userID" value="userID"></p>
             </div>
 
+            <div class="inputbox" id="inputbox-cancel-reservation">
+                <p><input type="text" id="cancel-reservation-id" value="Reservation confirmation"></p>
+            </div>
+
         </div>
+
+
     </div>
 
+    <div style="margin: 20px 0 0 20px">
+        <input type="button" name="Submit" value="Submit" onclick="submit()">
+        <div id="handleBox" style="display: inline; font-size: 30px; font-weight: 700; color: red"></div>
+    </div>
+
+
     <div class="container" id="resultbox" style="display: block; padding: 20px; font-weight: 700; border: #222222; min-height: 20px">
+        <div id="resultbox-error" style="display:none; color: red"></div>
+
         <div id="resultbox-user" style="display:none">
             <h3>User information:</h3>
+        </div>
         <br>
 
-        <div id="resultbox-locations" style="display:none">
+        <div style="display:grid; grid-template-columns: 700px auto">
+            <div id="resultbox-locations" style="display:none">
+            </div>
+
+            <div id="resultbox-packages" style="display:none">
+            </div>
+        </div>
+
+        <div id="resultbox-available-slots" style="display:none">
             <h3>Locations:</h3>
         </div>
 
         <br>
     </div>
 
-
-    <div class="w3-row forumDiv" style="color:red; font-weight: 700; font-size: 25px">
-        <div class="w3-col m4" id="handleBox"></div>
-    </div>
-
-        <input type="button" name="Submit" value="Submit" onclick="submit()">
-
-    <div class="w3-row" style="margin:10px;">
-        <p class="w3-col w3-container center" style="width:3%"/>
-        <div class="w3-col w3-container bottom" style="width:45%">
-            Request Body: <textarea type="text" id="requestBox" name="requestBox" class="requestBody" style="width:50%; min-height:300px"></textarea>
+    <div class="" style="margin:10px; display:grid; grid-template-columns: 50% 50%">
+        <div>
+            <p class="w3-col w3-container center" style="width:3%"/>
+            <div class="w3-col w3-container bottom" style="width:45%">
+                Request Body: <textarea type="text" id="requestBox" name="requestBox" class="requestBody" style="min-height:300px"></textarea>
+            </div>
         </div>
-        <p class="w3-col w3-container center" style="width:3%"/>
-        <div class="w3-col w3-container bottom" style="width:45%">
-            Response From the server: <textarea type="text" id="response" class="responseBody" style="width:60%; min-height:300px" readonly></textarea>
+        <div>
+            <p class="w3-col w3-container center" style="width:3%"/>
+            <div class="w3-col w3-container bottom" style="width:45%">
+                Response From the server: <textarea type="text" id="response" class="responseBody" style="min-height:300px" readonly></textarea>
+            </div>
         </div>
+
         <div>
             <p class="w3-col w3-container center" style="width:3%"/>
         </div>
@@ -160,7 +181,7 @@
 
     var reservations = [];
     var locations = [];
-    var packages = []
+    var packages = [];
     var availableSlots = [];
 
     var res = null;
@@ -176,8 +197,9 @@
         var commandType = resultData.commandType;
 
         if(success) {
+            document.getElementById("resultbox-error").style.display= 'none';
 
-            if(commandType === "LOGIN") {
+            if(commandType === "LOGIN" || commandType === "REGISTER") {
                 username = resultData.username;
                 password =  resultData.password;
                 email = resultData.email;
@@ -193,15 +215,15 @@
                 myUser += "<li>User Phone Number: " + phone + "</li>";
                 myUser += "</ul>";
 
-                document.getElementById("resultbox-user").innerHTML =
-                    "Welcome! user " + username;
+                document.getElementById("resultbox-user").innerHTML = myUser;
+
                 document.getElementById("resultbox-user").style.display = 'block';
 
             }
             else if(commandType === "GET_LOCATIONS") {
                 locations = resultData.locations;
 
-                var myTable = document.getElementById("resultbox-locations").innerHTML;
+                var myTable = "<h3>Locations:</h3>";
                 myTable += "<table style=\"border: 1px solid black;\">";
                 myTable += "<tr>";
                 myTable += "<th style='width: 50px; color: red;'>locationID</th>";
@@ -231,36 +253,62 @@
 
             }
             else if(commandType === "GET_PACKAGES") {
-                locations = resultData.locations;
+                packages = resultData.packages;
 
-                var myTable = document.getElementById("resultbox-packages").innerHTML;
+                var myTable = "<h3>Packages:</h3>";
                 myTable += "<table style=\"border: 1px solid black;\">";
                 myTable += "<tr>";
-                myTable += "<th style='width: 50px; color: red;'>locationID</th>";
-                myTable += "<th style='width: 100px; color: red;'>locationName</th>";
-                myTable += "<th style='width: 300px; color: red;'>Street Address</th>";
-                myTable += "<th style='width: 100px; color: red;'>City</th>";
-                myTable += "<th style='width: 100px; color: red;'>State</th>";
-                myTable += "<th style='width: 100px; color: red;'>Zip code</th>";
+                myTable += "<th style='width: 50px; color: red;'>packageID</th>";
+                myTable += "<th style='width: 100px; color: red;'>packageName</th>";
+                myTable += "<th style='width: 100px; color: red;'>hourlyRate</th>";
+                myTable += "<th style='width: 100px; color: red;'>maxOccupancy</th>";
                 myTable += "</tr>";
 
 
-                locations.forEach(function(loc) {
+                packages.forEach(function(loc) {
                     myTable += "<tr>";
-                    myTable += "<th style='width: 100px;'>" + loc.locationID + "</th>";
-                    myTable += "<th style='width: 100px;'>" + loc.locationName + "</th>";
-                    myTable += "<th style='width: 100px;'>" + loc.streetAddress + "</th>";
-                    myTable += "<th style='width: 100px;'>" + loc.city + "</th>";
-                    myTable += "<th style='width: 100px;'>" + loc.state + "</th>";
-                    myTable += "<th style='width: 100px;'>" + loc.zipcode + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageID + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageName + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.hourlyRate + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.maxOccupancy + "</th>";
                     myTable += "</tr>";
                 });
 
                 myTable += "</table>";
 
-                document.getElementById("resultbox-locations").innerHTML = myTable;
-                document.getElementById("resultbox-locations").style.display = 'block';
+                document.getElementById("resultbox-packages").innerHTML = myTable;
+                document.getElementById("resultbox-packages").style.display = 'block';
 
+            }
+            else if(commandType === "GET_AVAILABLE_SLOTS") {
+                availableSlots = resultData.slots;
+
+                var myTable = "<h3>AVAILABLE SLOTS:</h3>";
+                myTable += "<table style=\"border: 1px solid black;\">";
+                myTable += "<tr>";
+                myTable += "<th style='width: 50px; color: red;'>slotID</th>";
+                myTable += "<th style='width: 100px; color: red;'>Package Name</th>";
+                myTable += "<th style='width: 100px; color: red;'>Hourly Rate</th>";
+                myTable += "<th style='width: 100px; color: red;'>Max Occupancy</th>";
+                myTable += "<th style='width: 100px; color: red;'>Address</th>";
+                myTable += "<th style='width: 100px; color: red;'>Availability</th>";
+                myTable += "</tr>";
+
+                availableSlots.forEach(function(loc) {
+                    myTable += "<tr>";
+                    myTable += "<th style='width: 100px;'>" + loc.slotID + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.packageName + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.hourlyRate + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.maxOccupancy + "</th>";
+                    myTable += "<th style='width: 400px;'>" + loc.locationAddress + "</th>";
+                    myTable += "<th style='width: 100px;'>" + loc.availability + "</th>";
+                    myTable += "</tr>";
+                });
+
+                myTable += "</table>";
+
+                document.getElementById("resultbox-available-slots").innerHTML = myTable;
+                document.getElementById("resultbox-available-slots").style.display = 'block';
             }
             else if(commandType === "MAKE_RESERVATION") {
                 reservations.push(resultData.confirmationID);
@@ -271,6 +319,8 @@
 
         } else {
             errorMsg = resultData.msg;
+            document.getElementById("resultbox-error").innerHTML = errorMsg;
+            document.getElementById("resultbox-error").style.display= 'block';
         }
 
         document.getElementById("handleBox").value = "";
@@ -289,7 +339,7 @@
 
     function login()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "LOGIN";
         var uname = document.getElementById("login-username").value;
         var pw = document.getElementById("login-password").value;
@@ -302,7 +352,7 @@
     }
     function register()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "REGISTER";
         var uname = document.getElementById("register-username").value;
         var pw = document.getElementById("register-password").value;
@@ -319,7 +369,7 @@
     }
     function addLocation()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "ADD_LOCATION";
         document.getElementById("requestBox").value = "";
         hideInputBoxes()
@@ -327,7 +377,7 @@
     }
     function getLocation()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_LOCATIONS";
         req = formatJson("{\"commandType\":\"GET_LOCATIONS\"}");
         document.getElementById("requestBox").value = "";
@@ -335,7 +385,7 @@
     }
     function addPackage()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "ADD_PACKAGE";
         document.getElementById("requestBox").value = "";
         hideInputBoxes()
@@ -343,15 +393,15 @@
     }
     function getPackage()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_PACKAGES";
-        req = formatJson("{\"commandType\":\"GET_SERVICE_PACKAGES\"}");
+        req = formatJson("{\"commandType\":\"GET_PACKAGES\"}");
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
     }
     function addSlot()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "ADD_SLOT";
         document.getElementById("requestBox").value = "";
         hideInputBoxes()
@@ -359,15 +409,22 @@
     }
     function getAvailableSlots()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_AVAILABLE_SLOTS";
+        var locID = document.getElementById("get-available-slots-locationID").value;
+        var pacID = document.getElementById("get-available-slots-packageID").value;
+        if(pacID == "") { pacID = -1;} else { pacID = Number(pacID); }
+        if(locID == "") { locID = -1;} else { locID = Number(locID); }
+        req = formatJson("{\"commandType\":\"GET_AVAILABLE_SLOTS\",\"locationID\":" + locID +
+            ",\"packageID\":" + pacID + "}");
+
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
         document.getElementById("inputbox-get-available-slots").style.display = 'block';
     }
     function makeReservation()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "MAKE_RESERVATION";
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
@@ -375,31 +432,43 @@
     }
     function getReservationByID()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_RESERVATION_BY_ID";
+        var id = document.getElementById("get-reservation-id").value;
+        req = formatJson("{\"commandType\":\"GET_RESERVATION_BY_ID\",\"id\":\"" + id + "\"}")
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
         document.getElementById("inputbox-get-reservation-by-ID").style.display = 'block';
     }
     function getReservationByUser()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "GET_RESERVATION_BY_USER";
+        var currID = document.getElementById("get-reservation-userID").value;
+        if(currID === "userID") {
+            currID = userID;
+        }
+        req = formatJson("{\"commandType\":\"GET_RESERVATION_BY_USER\",\"id\":\"" + currID + "\"}")
         document.getElementById("requestBox").value = "";
         hideInputBoxes();
         document.getElementById("inputbox-get-reservation-by-user").style.display = 'block';
     }
     function cancelReservation()
     {
-        window.scrollTo(0,document.body.scrollHeight);
+        window.scrollTo(0,0);
         document.getElementById("handleBox").innerText = "CANCEL_RESERVATION";
         document.getElementById("requestBox").value = "";
+        hideInputBoxes();
+        document.getElementById("inputbox-cancel-reservation").style.display = 'block';
+
     }
 
     function submit()
     {
         // var handle = document.getElementById("handleBox").value;
         var handle = "/command";
+        console.log("PRINT OUT REQUEST STRING:");
+        console.log(req)
         var requestBody = req;
         document.getElementById("requestBox").value = req;
         // var token = document.getElementById("authToken").value;

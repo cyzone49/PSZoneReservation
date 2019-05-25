@@ -61,6 +61,8 @@ public class CommandHandler implements HttpHandler
                         username = json.get("username").getAsString();
                     }
 
+                    System.out.println(reqData);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -179,7 +181,6 @@ public class CommandHandler implements HttpHandler
                     }
                     else
                     {
-                        System.out.println("GOT HEREEEEE");
                         GetAllServicePackagesCommand command = new GetAllServicePackagesCommand(commandData);
 
                         CommandResult commandResult = command.execute();
@@ -252,6 +253,7 @@ public class CommandHandler implements HttpHandler
                     else
                     {
                         GetReservationByUserCommand command = new GetReservationByUserCommand(commandData);
+                        System.out.println("userid = " + commandData.getUserID());
 
                         CommandResult commandResult = command.execute();
                         success = sendResult(commandResult, exchange, username);

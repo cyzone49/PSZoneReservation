@@ -155,6 +155,8 @@ public class ReservationDao {
                     " inner join packages on slots.packageID = packages.rowid" +
                     " where reservations.userID = " + userID;
 
+            System.out.println(GET_RESERVATION_BY_USER);
+
             rs = statement.executeQuery(GET_RESERVATION_BY_USER);
 
             if(!rs.next()) {
